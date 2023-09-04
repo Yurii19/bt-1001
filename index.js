@@ -1,5 +1,6 @@
 const express = require("express");
 import { expeditions } from "./src/expeditions";
+import { news } from "./src/news";
 var cors = require('cors');
 // Initialize Express
 const app = express();
@@ -12,6 +13,10 @@ app.get("/", (req, res) => {
 
 app.get("/expeditions", (req, res) => {
   res.send(expeditions);
+});
+
+app.get("/news", (req, res) => {
+  res.send(news);
 });
 
 // Initialize server
