@@ -1,10 +1,11 @@
 const express = require("express");
-import { expeditions } from "./src/expeditions";
-import { news } from "./src/news";
+// import { expeditions } from "./src/expeditions";
+ //import  news  from "src/news";
 var cors = require('cors');
 // Initialize Express
 const app = express();
 app.use(cors())
+app.use(require('prerender-node').set('prerenderToken', 'qMNBuejMomsH6fzi8Xgz'));
 
 // Create GET request
 app.get("/", (req, res) => {
@@ -16,7 +17,7 @@ app.get("/expeditions", (req, res) => {
 });
 
 app.get("/news", (req, res) => {
-  res.send(news);
+  res.send('news');
 });
 
 // Initialize server
